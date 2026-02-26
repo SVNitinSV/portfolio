@@ -423,3 +423,40 @@ img {
     font-size: 12px;
   }
 }
+/* ----------------------------------
+   MOBILE HEADER FIX (max-width: 600px)
+   ---------------------------------- */
+@media (max-width: 600px) {
+
+  /* Reduce header height */
+  .site-header {
+    padding: 10px 0;
+  }
+
+  /* Brand text smaller */
+  .brand {
+    font-size: 26px;
+  }
+
+  /* Navigation layout change */
+  nav {
+    gap: 14px;            /* reduce spacing */
+  }
+
+  nav a {
+    font-size: 14px;      /* readable size */
+    padding: 4px 0;
+  }
+
+  /* Keep header items tighter */
+  .nav-wrap {
+    min-height: 50px;
+    padding: 0 4px;
+  }
+
+  /* Fix alignment issue */
+  .nav-wrap nav {
+    display: flex;
+    align-items: center;
+  }
+}
