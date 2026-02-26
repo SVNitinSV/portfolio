@@ -1,4 +1,3 @@
-/* ROOT VARIABLES */
 :root {
   --bg: #efeded;
   --ink: #1a1d22;
@@ -7,7 +6,7 @@
   --dark: #14171d;
 }
 
-/* RESET + BASE */
+/* Reset */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -22,7 +21,7 @@ body {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -52,17 +51,23 @@ nav a {
   font-size: 23px;
 }
 
-/* UNIVERSAL PHOTO FIX */
+/* IMAGE FIX — universal photo class */
 .photo {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 6px;
 }
 
-/* HERO SECTION */
+/* ASPECT RATIOS — IMPORTANT */
+.hero-photo { aspect-ratio: 3 / 4; }
+.about-photo { aspect-ratio: 3 / 4; }
+.timeline-item .wide-photo { aspect-ratio: 16 / 9; }
+.double-photo .photo { aspect-ratio: 1 / 1; }
+.triple-photo .photo { aspect-ratio: 3 / 4; }
+
+/* Hero */
 .hero {
   min-height: calc(100vh - 76px);
   padding: 60px 0 80px;
@@ -71,19 +76,14 @@ nav a {
   grid-template-columns: 1fr 1fr;
   gap: 70px;
 }
-.hero-photo {
-  background-image: url("assets/hero-akalya.jpg");
-  height: 70vh;
-  max-height: 820px;
-}
 
-/* TYPOGRAPHY */
 .eyebrow {
   letter-spacing: 0.2em;
   color: #8e95a0;
   font-size: 20px;
   margin-bottom: 28px;
 }
+
 .hero h1 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
@@ -111,7 +111,18 @@ nav a {
   font-size: 22px;
 }
 
-/* ABOUT SECTION */
+/* IMAGES */
+.hero-photo { background-image: url("assets/hero-akalya.jpeg"); }
+.about-photo { background-image: url("assets/about-bw.jpeg"); }
+.timeline-item .wide-photo { background-image: url("assets/education-undergrad-group.jpeg"); }
+.double-photo .photo:nth-child(1) { background-image: url("assets/cert-ntu-classroom.jpeg"); }
+.double-photo .photo:nth-child(2) { background-image: url("assets/cert-ntu-outdoor.jpeg"); }
+.card .wide-photo { background-image: url("assets/cert-aalto-group.jpeg"); }
+.triple-photo .photo:nth-child(1) { background-image: url("assets/goals-styling.jpeg"); }
+.triple-photo .photo:nth-child(2) { background-image: url("assets/goals-painting.jpeg"); }
+.triple-photo .photo:nth-child(3) { background-image: url("assets/goals-field.jpeg"); }
+
+/* About */
 .about {
   padding: 140px 0;
   background: var(--dark);
@@ -124,202 +135,36 @@ nav a {
   margin: 0 0 56px;
   font-weight: 500;
 }
-.about h2::after {
-  content: "";
-  display: block;
-  margin-top: 24px;
-  width: 112px;
-  border-bottom: 1px solid #3a4048;
-}
-
 .about-grid {
   display: grid;
   grid-template-columns: 40% 1fr;
   gap: 70px;
 }
-.about-photo {
-  background-image: url("assets/about-bw.jpg");
-  height: 560px;
-  max-width: 100%;
-}
 
-/* ABOUT TEXT */
-.about h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  font-weight: 500;
-  color: #efe0c8;
-  font-size: 50px;
-  margin: 16px 0;
-}
-.about p {
-  font-size: 30px;
-  line-height: 1.55;
-  color: #d8dbe3;
-}
-.facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 38px;
-  border-top: 1px solid #2a2f37;
-  padding-top: 28px;
-}
-.facts strong {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 48px;
-  font-weight: 500;
-}
-
-/* EDUCATION SECTION */
+/* Education */
 .education {
   padding: 110px 0 90px;
 }
-.center { text-align: center; }
-.education h2 { text-align: center; }
-
 .edu-grid {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 70px;
 }
-.edu-grid h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 52px;
-  margin-bottom: 18px;
-}
 
-.timeline {
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
-}
-.timeline-item {
-  padding: 0 0 32px 34px;
-  border-left: 1px solid var(--line);
-  position: relative;
-}
-.timeline-item::before {
-  content: "";
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #111;
-  position: absolute;
-  left: -6px;
-  top: 6px;
-}
-h4 {
-  margin: 6px 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
-  font-weight: 500;
-}
-.italic {
-  font-style: italic;
-  color: #808590;
-  font-size: 28px;
-  margin: 0;
-}
-.timeline-item p:not(.eyebrow):not(.italic),
-.card p:not(.eyebrow):not(.italic) {
-  font-size: 26px;
-  color: #5a616d;
-  line-height: 1.42;
-}
-
-/* EDUCATION IMAGES */
-.wide-photo {
-  margin-top: 16px;
-  height: 260px;
-  border-radius: 10px;
-}
-.timeline-item .wide-photo {
-  background-image: url("assets/education-undergrad-group.jpg");
-}
-
-/* CERTIFICATION CARDS */
-.card {
-  border: 1px solid #e8e3dd;
-  padding: 34px;
-  margin-bottom: 26px;
-  border-radius: 10px;
-}
-.double-photo {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
-}
-.double-photo .photo {
-  height: 230px;
-}
-.double-photo .photo:nth-child(1) {
-  background-image: url("assets/cert-ntu-classroom.jpg");
-}
-.double-photo .photo:nth-child(2) {
-  background-image: url("assets/cert-ntu-outdoor.jpg");
-}
-.card .wide-photo {
-  height: 280px;
-  background-image: url("assets/cert-aalto-group.jpg");
-}
-
-/* GOALS SECTION */
+/* Goals */
 .goals {
   background: #efeded;
   padding: 90px 0 120px;
-  position: relative;
 }
-blockquote {
-  margin: 0 auto;
-  max-width: 1060px;
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(52px, 5vw, 110px);
-  line-height: 0.95;
-}
-.goals > .container > p {
-  margin: 24px auto 0;
-  text-align: center;
-  font-size: 34px;
-  line-height: 1.32;
-  max-width: 820px;
-  color: #707884;
-}
-
-.vision {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 300px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(160px, 19vw, 420px);
-  color: #e6e2de;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* TRIPLE PHOTOS */
 .triple-photo {
   margin-top: 56px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.triple-photo .photo {
-  height: 420px;
-}
-.triple-photo .photo:nth-child(1) {
-  background-image: url("assets/goals-styling.jpg");
-}
-.triple-photo .photo:nth-child(2) {
-  background-image: url("assets/goals-painting.jpg");
-}
-.triple-photo .photo:nth-child(3) {
-  background-image: url("assets/goals-field.jpg");
-}
 
-/* FOOTER */
+/* Footer */
 .site-footer {
   background: #12161c;
   color: #a0a8b2;
@@ -331,38 +176,10 @@ blockquote {
   align-items: center;
   gap: 24px;
 }
-.site-footer .brand { color: #fff; }
-.site-footer nav a { color: #c2c7d0; }
-.site-footer p {
-  border-top: 1px solid #2e3440;
-  margin: 8px 0 0;
-  padding-top: 28px;
-  width: min(520px, 100%);
-  text-align: center;
-  letter-spacing: 0.09em;
-}
 
-/* RESPONSIVE FIXES */
-@media (max-width: 1200px) {
-  nav a { font-size: 16px; }
-  .brand { font-size: 30px; }
-}
-
+/* Responsive */
 @media (max-width: 900px) {
-  .hero,
-  .about-grid,
-  .edu-grid,
-  .triple-photo {
+  .hero, .about-grid, .edu-grid, .triple-photo {
     grid-template-columns: 1fr;
   }
-
-  .hero-photo {
-    height: 420px;
-  }
-
-  .about-photo {
-    height: 420px;
-  }
-
-  .vision { display: none; }
 }
