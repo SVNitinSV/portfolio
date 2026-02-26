@@ -296,3 +296,130 @@ img {
   .hero-photo img { height: 500px; }
   .about-photo img { height: 500px; }
 }
+/* ------------------------------
+   FULL MOBILE RESPONSIVENESS FIX
+   ------------------------------ */
+
+@media (max-width: 600px) {
+
+  /* Header */
+  .brand {
+    font-size: 28px;
+  }
+  nav {
+    gap: 18px;
+  }
+  nav a {
+    font-size: 14px;
+  }
+
+  /* General spacing */
+  .container {
+    width: calc(100% - 40px);
+  }
+  section {
+    padding: 60px 0 !important;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 30px;
+  }
+  .hero h1 {
+    font-size: 46px;
+  }
+  .hero-copy > p {
+    font-size: 20px;
+  }
+  .hero-photo img {
+    height: 380px;
+    border-radius: 8px;
+  }
+  .btn {
+    padding: 12px 26px;
+    font-size: 16px;
+  }
+
+  /* About */
+  .about {
+    padding: 80px 0 !important;
+  }
+  .about h2 {
+    font-size: 42px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-photo img {
+    height: 420px;
+  }
+  .about h3 {
+    font-size: 32px;
+  }
+  .about p {
+    font-size: 20px;
+  }
+  .facts strong {
+    font-size: 28px;
+  }
+
+  /* Education */
+  .education {
+    padding: 80px 0 !important;
+  }
+  .education h2 {
+    font-size: 46px;
+  }
+  .edu-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .edu-grid h3 {
+    font-size: 32px;
+  }
+  .timeline {
+    padding-top: 10px;
+  }
+  .timeline-item h4 {
+    font-size: 28px;
+  }
+  .timeline-item p,
+  .timeline-item .italic {
+    font-size: 18px;
+  }
+  .wide-photo img {
+    height: 220px;
+  }
+  .double-photo img {
+    height: 160px;
+  }
+
+  /* Goals */
+  .goals blockquote {
+    font-size: 34px;
+  }
+  .goals > .container > p {
+    font-size: 20px;
+  }
+  .vision {
+    font-size: 120px;
+    margin-top: 20px;
+  }
+  .triple-photo {
+    grid-template-columns: 1fr;
+  }
+  .triple-photo img {
+    height: 380px;
+  }
+
+  /* Footer */
+  .footer-inner nav a {
+    font-size: 16px;
+  }
+  .footer-inner p {
+    font-size: 12px;
+  }
+}
